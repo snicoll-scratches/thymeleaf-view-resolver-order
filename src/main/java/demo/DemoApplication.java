@@ -15,19 +15,6 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public TemplateResolver defaultTemplateResolver(SpringResourceResourceResolver resourceResolver) {
-		TemplateResolver resolver = new TemplateResolver();
-		resolver.setResourceResolver(resourceResolver);
-		resolver.setPrefix("classpath:/templates/default/");
-		resolver.setSuffix(".html");
-		resolver.setTemplateMode("HTML5");
-		resolver.setCharacterEncoding("UTF-8");
-		resolver.setOrder(10);
-
-		return resolver;
-	}
-
-	@Bean
 	public TemplateResolver customTemplateResolver(SpringResourceResourceResolver resourceResolver) {
 		TemplateResolver resolver = new TemplateResolver();
 		resolver.setResourceResolver(resourceResolver);
@@ -39,11 +26,5 @@ public class DemoApplication {
 
 		return resolver;
 	}
-
-	@Bean
-	public SpringResourceResourceResolver thymeleafResourceResolver() {
-		return new SpringResourceResourceResolver();
-	}
-
 
 }
